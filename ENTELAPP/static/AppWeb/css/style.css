@@ -1,0 +1,90 @@
+.bg-morado{
+    background-color:#531CB3;
+}
+.txt-morado{
+    color:#531CB3;
+}
+
+.bg-rosado{
+    background-color:#944BBB;
+}
+.txt-rosado{
+    color:#944BBB;
+}
+
+.bg-rosado-claro{
+    background-color:#AA7BC3;
+}
+.txt-rosado-claro{
+    color:#AA7BC3;
+}
+
+.bg-rosado-clarin{
+    background-color:#CC92C2;
+}
+.txt-rosado-clarin{
+    color:#CC92C2;
+}
+
+.bg-piel{
+    background-color:#DBA8AC;
+}
+.txt-piel{
+    color:#DBA8AC;
+}
+
+.bordes{
+    border-radius: 20px;
+}
+.padding{
+    padding-top: 10px;
+    bottom: 0;
+}
+.padding2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+#Form1{
+    padding: 40px;
+}
+#FormRegistro{
+    padding: 50px;
+}
+
+.bordes2{
+    border-color:#AA7BC3;;
+}
+.negro{
+    color: white;
+    
+}
+#BODY1{
+    background-color: #CC92C2;
+    color: #531CB3;
+}
+.bordes_negros{
+    border: 10px solid black;
+    border-top: 15px solid orange;
+}
+
+.footer{
+    padding-top: 30px;
+    bottom: 0;
+    
+
+}
+
+#body2{
+    background-color: #CC92C2;
+}
+
+.padding4{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
