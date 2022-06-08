@@ -1,0 +1,4 @@
+pip install django
+pip install django-bootstrap4
+pip instal django-crispy-forms
+python -m pip install Pillow
