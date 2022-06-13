@@ -16,47 +16,32 @@
 </head>
 
 <body style="background-color:#ffffff;">
-    <header class="Header">
-        <div class="headerParte1 bg-morado">
-            <div class="container-fluid ">
-                <!-- primera fila -->
-                <div class="row ">
-                    <!-- columna 1 -->
-                    <div class="col-md-1">
-                        <!-- logo de la pagina -->
-                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="FormRegistroConsulta">
-        <br>
-        <div class="container bg-piel border border-dark rounded ">
-            <div class="row padding2">
-                <div class="col-md-12 ">
-                    <div>
-                        <br>
-                        <h5>
-                            <txt class="border-dark rounded">Registrar producto/servicio</txt>
-                        </h5>
-                    </div>
-
-                    <form action="" method="post" id="formulariod" enctype="multipart/form-data">
-                        {% csrf_token %} {{ form | crispy}}
-                        <br>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary col-2 text-white"><a href="{% url 'home'%}" class="text-white">Volver al home</a></button>
-                            <button type="submit" class="btn btn-primary col-4">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <br>
-    </section>
-
+    <div id="divlist">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in producto%}
+                <tr>
+                    <td>{{p.imagen}}</td>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.precio}}</td>
+                    <td>{{p.stock}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="{% url 'registrarProductos'%}">
+            Registrar Producto/Servicio
+        </a>
+    </div>
     <footer class="bg-dark text-white footer ">
         <div class="container">
             <nav class="row">
@@ -94,7 +79,6 @@
         </div>
         <br>
     </footer>
-
 </body>
 
 </html>

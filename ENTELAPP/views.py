@@ -21,3 +21,10 @@ def registrarProductos(request):
             messages.error(request,"No te has registrado correctamente")
 
     return render(request,'registrarProductos.html',datos)
+
+def catalogoDeOfertas(request):
+    producto = PRODUCTO.objects.all
+    datos = {
+        'producto': producto
+    }
+    return render(request,'catalogoOfertas.html',datos) 

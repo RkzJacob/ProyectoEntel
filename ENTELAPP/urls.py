@@ -4,9 +4,10 @@ from django.urls.resolvers import URLPattern
 
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import registrarProductos
+from .views import registrarProductos, catalogoDeOfertas
 
 urlpatterns = [
-    path('',registrarProductos,name='home'),
+    path('',catalogoDeOfertas,name='home'),
+    path('registrarProductos',registrarProductos,name='registrarProductos'),
 
 ]
