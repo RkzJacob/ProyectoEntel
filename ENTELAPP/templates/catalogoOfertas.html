@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar productos/servicios</title>
     {% bootstrap_css %}
-    <link rel="shortcut icon" type="image/png" href="{% static 'AppWeb/img/logo.png' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'AppWeb/img/logo-entel.png' %}">
     <link rel="stylesheet" href="{% static 'AppWeb/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="{% static 'AppWeb/js/jquery-3.6.0.js' %}"></script>
@@ -27,7 +27,7 @@
                     <!-- columna 1 -->
                     <div class="col-md-1">
                         <!-- logo de la pagina -->
-                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
+                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="52" height="52" alt="GroupZero"></a>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,7 @@
                 {% for p in producto%}
                 <div class="col-4 mt-4" >
                     <div class="card  border border-secondary" style="width: 18rem;">
+                        <p>Seleccione su oferta</p>
                         <a href="">
                             {% if producto.imagenPublicacion.url == "null" %}
                             <img src="{% static 'AppWeb/media/fotoproductos/1366_2000.png' %}" class="card-img-top" alt="imagen producto" width="120" height="240">
@@ -79,7 +80,7 @@
         <div class="container">
             <nav class="row">
                 <a href="{% url 'home'%}" class="col-3 text-reset text-uppercase d-flex align-items-center ">
-                    <img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="Logo GroupZero" class="img-logo mr-2">
+                    <img src="{% static 'AppWeb/img/logo-entel.png' %}" width="57" height="57" alt="Logo GroupZero" class="img-logo mr-2">
                 </a>
                 <ul class="col-3 list-unstyled">
                     <li class="font-weight-bold text-uppercase">Problemas</li>
