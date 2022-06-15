@@ -1,4 +1,6 @@
-{% load static %} {% load bootstrap4 %} {%load crispy_forms_tags %}
+{% load static %} 
+{% load bootstrap4 %} 
+{%load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,33 +18,63 @@
 </head>
 
 <body style="background-color:#ffffff;">
-    <div id="divlist">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Stock</th>
-                </tr>
-            </thead>
-            <tbody>
+
+    <header class="Header">
+        <div class="headerParte1 bg-morado">
+            <div class="container-fluid ">
+                <!-- primera fila -->
+                <div class="row ">
+                    <!-- columna 1 -->
+                    <div class="col-md-1">
+                        <!-- logo de la pagina -->
+                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container padding-1 margin-1 ">
+          
+        <div class="row" >
+          
                 {% for p in producto%}
-                <tr>
-                    <td>{{p.imagen}}</td>
-                    <td>{{p.nombre}}</td>
-                    <td>{{p.precio}}</td>
-                    <td>{{p.stock}}</td>
-                </tr>
+                <div class="col-4 mt-4" >
+                    <div class="card  border border-secondary" style="width: 18rem;">
+                        <a href="">
+                            {% if producto.imagenPublicacion.url == "null" %}
+                            <img src="{% static 'AppWeb/media/fotoproductos/1366_2000.png' %}" class="card-img-top" alt="imagen producto" width="120" height="240">
+                            {%else%}
+                            <img src="{{ p.imagenProducto.url }}" class="card-img-top" alt="imagen producto" width="120" height="240">
+                            {% endif %}
+                        </a>
+                        <div class="card-body">
+                          <h6 class="card-title">{{p.nombre}}</h6>
+                          <br>
+                          <h6 class="card-text">Descripción:  {{ p.desc }}</h6>
+                          <br>
+                          <p class="card-text">Fabricante: {{p.fabricante}}</p>
+                          <br>
+                          <p class="card-text">Precio: {{p.precio}}</p>
+                          <br>
+                          
+                          
+                        </div>
+                      </div>
+                </div>
+                <br>
+
+                
                 {% endfor %}
-            </tbody>
-        </table>
+        
+        </div>
     </div>
     <div>
         <a href="{% url 'registrarProductos'%}">
             Registrar Producto/Servicio
         </a>
     </div>
+    <br>
     <footer class="bg-dark text-white footer ">
         <div class="container">
             <nav class="row">

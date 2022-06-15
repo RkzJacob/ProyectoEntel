@@ -17,7 +17,7 @@ class PRODUCTO(models.Model):
     stock = models.IntegerField(verbose_name='Stock del producto',null=True)
     desc = models.TextField(verbose_name='Descripcion del producto',null=True)
     fabricante = models.CharField(max_length=50,verbose_name='Fabricante del producto',null=True)
-    imagen = models.ImageField(upload_to="fotoproductos",verbose_name='Imagen del producto',null=True)
+    imagenProducto = models.ImageField(upload_to="fotoproductos",verbose_name='Imagen del producto',null=True)
     nom_tipo_producto = models.ForeignKey(TIPO_PRODUCTO,on_delete=models.CASCADE,verbose_name='Tipo producto')
 
     def __str__(self):
