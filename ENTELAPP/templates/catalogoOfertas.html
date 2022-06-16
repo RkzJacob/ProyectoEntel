@@ -41,7 +41,7 @@
                 {% for p in producto%}
                 <div class="col-4 mt-4" >
                     <div class="card  border border-secondary" style="width: 18rem;">
-                        <p>Seleccione su oferta</p>
+                        <button>Seleccione su oferta</button>
                         <a href="">
                             {% if producto.imagenPublicacion.url == "null" %}
                             <img src="{% static 'AppWeb/media/fotoproductos/1366_2000.png' %}" class="card-img-top" alt="imagen producto" width="120" height="240">
