@@ -10,15 +10,18 @@ def registrarProductos(request):
     datos={
         'Producto' :Producto,
         'form': ProductoForm
+       
     }
     if request.method == 'POST':
         formulariod= ProductoForm(request.POST,request.FILES)
 
-        if formulariod.is_valid:
+        if formulariod.is_valid():
             formulariod.save()
             messages.success(request,"Datos guardados correctamente")
         else:
             messages.error(request,"No te has registrado correctamente")
+
+        
 
     return render(request,'registrarProductos.html',datos)
 
