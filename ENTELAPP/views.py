@@ -26,7 +26,7 @@ def registrarProductos(request):
     return render(request,'registrarProductos.html',datos)
 
 def catalogoDeOfertas(request):
-    producto = PRODUCTO.objects.all
+    producto = PRODUCTO.objects.all().order_by('nom_tipo_producto','nombre')
     datos = {
         'producto': producto
     }
