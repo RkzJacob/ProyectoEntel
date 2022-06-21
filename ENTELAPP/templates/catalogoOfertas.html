@@ -1,6 +1,4 @@
-{% load static %} 
-{% load bootstrap4 %} 
-{%load crispy_forms_tags %}
+{% load static %} {% load bootstrap4 %} {%load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,53 +27,47 @@
                         <!-- logo de la pagina -->
                         <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="52" height="52" alt="GroupZero"></a>
                     </div>
+                    <button><a href="{% url 'home'%}">Catalogo</a></button>
+                    <button><a href="{% url 'registrarProductos'%}">Registrar Producto/Servicio</a></button>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <div class="container padding-1 margin-1 ">
-          
-        <div class="row" >
-          
-                {% for p in producto%}
-                <div class="col-4 mt-4" >
-                    <div class="card  border border-secondary" style="width: 18rem;">
-                        <button>Seleccione su oferta</button>
-                        <a href="">
+
+        <div class="row">
+
+            {% for p in producto%}
+            <div class="col-4 mt-4">
+                <div class="card  border border-secondary" style="width: 18rem;">
+                    <button>Seleccione su oferta</button>
+                    <a href="">
                             {% if producto.imagenPublicacion.url == "null" %}
                             <img src="{% static 'AppWeb/media/fotoproductos/1366_2000.png' %}" class="card-img-top" alt="imagen producto" width="120" height="240">
                             {%else%}
                             <img src="{{ p.imagenProducto.url }}" class="card-img-top" alt="imagen producto" width="120" height="240">
                             {% endif %}
                         </a>
-                        <div class="card-body">
-                          <h6 class="card-title">{{p.nombre}}</h6>
-                          <br>
-                          <h6 class="card-text">Descripción:  {{ p.desc }}</h6>
-                          <br>
-                          <p class="card-text">Fabricante: {{p.fabricante}}</p>
-                          <br>
-                          <p class="card-text">Precio: {{p.precio}}</p>
-                          <br>
-                          <p class="card-text">Categoria: {{p.nom_tipo_producto}}</p>
-                          <br>
-                          
-                          
-                        </div>
-                      </div>
-                </div>
-                <br>
+                    <div class="card-body">
+                        <h6 class="card-title">{{p.nombre}}</h6>
+                        <br>
+                        <h6 class="card-text">Descripción: {{ p.desc }}</h6>
+                        <br>
+                        <p class="card-text">Fabricante: {{p.fabricante}}</p>
+                        <br>
+                        <p class="card-text">Precio: {{p.precio}}</p>
+                        <br>
+                        <p class="card-text">Categoria: {{p.nom_tipo_producto}}</p>
+                        <br>
 
-                
-                {% endfor %}
-        
+
+                    </div>
+                </div>
+            </div>
+            <br> {% endfor %}
+
         </div>
-    </div>
-    <div>
-        <a href="{% url 'registrarProductos'%}">
-            Registrar Producto/Servicio
-        </a>
     </div>
     <br>
     <footer class="bg-dark text-white footer ">

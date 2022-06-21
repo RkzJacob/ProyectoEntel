@@ -1,6 +1,4 @@
-{% load static %} 
-{% load bootstrap4 %}
-{%load crispy_forms_tags %}
+{% load static %} {% load bootstrap4 %} {%load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +26,8 @@
                         <!-- logo de la pagina -->
                         <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
                     </div>
+                    <button><a href="{% url 'home'%}">Catalogo</a></button>
+                    <button><a href="{% url 'registrarProductos'%}">Registrar Producto/Servicio</a></button>
                 </div>
             </div>
         </div>
