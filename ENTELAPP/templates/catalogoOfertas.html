@@ -16,7 +16,6 @@
 </head>
 
 <body style="background-color:#ffffff;">
-
     <header class="Header">
         <div class="headerParte1 bg-morado">
             <div class="container-fluid ">
@@ -25,17 +24,32 @@
                     <!-- columna 1 -->
                     <div class="col-md-1">
                         <!-- logo de la pagina -->
-                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="52" height="52" alt="GroupZero"></a>
+                        <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
                     </div>
-                    <button><a href="{% url 'home'%}">Catalogo</a></button>
-                    <button><a href="{% url 'registrarProductos'%}">Registrar Producto/Servicio</a></button>
+
+                    <div class="col-md-1">
+                        <br>
+                        <button type="button" class="btn btn-primary  text-white"><a href="{% url 'home'%}" class="text-white">Catalogo</a></button>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <br>
+                        <button type="button" class="btn btn-primary   text-white"><a  class="text-white" href="{% url 'registrarProductos'%}" >Registrar Producto</a></button>
+                    </div>    
+                         
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container padding-1 margin-1 ">
-
+        <div class="row">
+            <ul class="col-3 list-unstyled">
+                <li class="font-weight-bold text-uppercase">Ordenar</li>
+                <li><a href="{% url 'ordernarFabricante'%}" class="text-reset">Fabricante</a></li>
+                <li><a href="{% url 'ordernarTipo'%}" class="text-reset">Tipo de producto</a></li>
+            </ul>
+        </div>
         <div class="row">
 
             {% for p in producto%}
@@ -54,7 +68,7 @@
                         <br>
                         <h6 class="card-text">Descripción: {{ p.desc }}</h6>
                         <br>
-                        <p class="card-text">Fabricante: {{p.fabricante}}</p>
+                        <p class="card-text">Fabricante: {{p.nombre_fabricante}}</p>
                         <br>
                         <p class="card-text">Precio: {{p.precio}}</p>
                         <br>

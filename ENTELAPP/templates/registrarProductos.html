@@ -26,8 +26,17 @@
                         <!-- logo de la pagina -->
                         <a href="{% url 'home'%}"><img src="{% static 'AppWeb/img/logo-entel.png' %}" width="90" height="80" alt="GroupZero"></a>
                     </div>
-                    <button><a href="{% url 'home'%}">Catalogo</a></button>
-                    <button><a href="{% url 'registrarProductos'%}">Registrar Producto/Servicio</a></button>
+
+                    <div class="col-md-1">
+                        <br>
+                        <button type="button" class="btn btn-primary  text-white"><a href="{% url 'home'%}" class="text-white">Catalogo</a></button>
+                    </div>
+
+                    <div class="col-md-2">
+                        <br>
+                        <button type="button" class="btn btn-primary   text-white"><a  class="text-white" href="{% url 'registrarProductos'%}" >Registrar Producto</a></button>
+                    </div>    
+                         
                 </div>
             </div>
         </div>
@@ -39,14 +48,15 @@
             <div class="row padding2">
                 <div class="col-md-12 ">
                     <div>
-                        <br>
                         <h5>
                             <txt class="border-dark rounded">Registrar producto/servicio</txt>
                         </h5>
                     </div>
 
                     <form action="" method="post" id="formulariod" enctype="multipart/form-data">
-                        {% csrf_token %} {{ form | crispy}}
+                        {% csrf_token %} 
+                        {{ form | crispy}}
+
                         <br>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary col-2 text-white"><a href="{% url 'home'%}" class="text-white">Volver al home</a></button>
@@ -98,5 +108,20 @@
     </footer>
 
 </body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+        {% for m in messages %}
+            <script>
+                Swal.fire({
+                "title": "Resultado",
+                "text": "{{m}}",
+                })
+
+            </script>
+        {% endfor %}
+    {% endif %}
+
+
 
 </html>
